@@ -6,7 +6,7 @@ import java.util.Date;
 public class Invoice {
 
     private int invoiceId;
-    private Date startDate, endDate, sendDate, payDate;
+    private Date sendDate, payDate;
     private boolean inOrOut;
     private double priceNoVat, vat, totalPrice;
 
@@ -14,9 +14,7 @@ public class Invoice {
     Company company = new Company;
     Alutec alutec = new Alutec;
 
-    public Invoice(Date startDate, Date endDate, Date sendDate, Date payDate, boolean inOrOut, double priceNoVat, double vat, double totalPrice, Case c, Company company, Alutec alutec) {
-        this.startDate = startDate;
-        this.endDate = endDate;
+    public Invoice(Date sendDate, Date payDate, boolean inOrOut, double priceNoVat, double vat, double totalPrice, Case c, Company company, Alutec alutec) {
         this.sendDate = sendDate;
         this.payDate = payDate;
         this.inOrOut = inOrOut;
@@ -28,10 +26,8 @@ public class Invoice {
         this.c = c;
     }
 
-    public Invoice(int invoiceId, Date startDate, Date endDate, Date sendDate, Date payDate, boolean inOrOut, double priceNoVat, double vat, double totalPrice, Case c, Company company, Alutec alutec) {
+    public Invoice(int invoiceId, Date sendDate, Date payDate, boolean inOrOut, double priceNoVat, double vat, double totalPrice, Case c, Company company, Alutec alutec) {
         this.invoiceId = invoiceId;
-        this.startDate = startDate;
-        this.endDate = endDate;
         this.sendDate = sendDate;
         this.payDate = payDate;
         this.inOrOut = inOrOut;
@@ -45,22 +41,6 @@ public class Invoice {
 
     public int getInvoiceId() {
         return invoiceId;
-    }
-
-    public Date getStartDate() {
-        return startDate;
-    }
-
-    public void setStartDate(Date startDate) {
-        this.startDate = startDate;
-    }
-
-    public Date getEndDate() {
-        return endDate;
-    }
-
-    public void setEndDate(Date endDate) {
-        this.endDate = endDate;
     }
 
     public Date getSendDate() {
