@@ -10,11 +10,11 @@ public class Invoice {
     private boolean inOrOut;
     private double priceNoVat, vat, totalPrice;
 
-    Case case = new Case;
+    Case c = new Case;
     Company company = new Company;
     Alutec alutec = new Alutec;
 
-    public Invoice(Date startDate, Date endDate, Date sendDate, Date payDate, boolean inOrOut, double priceNoVat, double vat, double totalPrice, Company company, Alutec alutec) {
+    public Invoice(Date startDate, Date endDate, Date sendDate, Date payDate, boolean inOrOut, double priceNoVat, double vat, double totalPrice, Case c, Company company, Alutec alutec) {
         this.startDate = startDate;
         this.endDate = endDate;
         this.sendDate = sendDate;
@@ -25,9 +25,10 @@ public class Invoice {
         this.totalPrice = totalPrice;
         this.company = company;
         this.alutec = alutec;
+        this.c = c;
     }
 
-    public Invoice(int invoiceId, Date startDate, Date endDate, Date sendDate, Date payDate, boolean inOrOut, double priceNoVat, double vat, double totalPrice, Company company, Alutec alutec) {
+    public Invoice(int invoiceId, Date startDate, Date endDate, Date sendDate, Date payDate, boolean inOrOut, double priceNoVat, double vat, double totalPrice, Case c, Company company, Alutec alutec) {
         this.invoiceId = invoiceId;
         this.startDate = startDate;
         this.endDate = endDate;
@@ -39,6 +40,7 @@ public class Invoice {
         this.totalPrice = totalPrice;
         this.company = company;
         this.alutec = alutec;
+        this.c = c;
     }
 
     public int getInvoiceId() {
@@ -123,5 +125,13 @@ public class Invoice {
 
     public void setAlutec(Alutec alutec) {
         this.alutec = alutec;
+    }
+
+    public Case getC() {
+        return c;
+    }
+
+    public void setC(Case c) {
+        this.c = c;
     }
 }
